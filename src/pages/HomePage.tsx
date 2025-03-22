@@ -40,7 +40,7 @@ function HomePage() {
           <div className="mb-8">
             <div className="mb-8">
               <img
-                src="/src/assets/CHOICEDGE BLACK-min.PNG"
+                src="/choicedge-logo.png"
                 alt="Choicedge"
                 className="h-24 md:h-28 mx-auto"
               />
