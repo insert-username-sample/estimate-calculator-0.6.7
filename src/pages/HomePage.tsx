@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Building2, Factory, Home, Hotel } from 'lucide-react';
 import { useNavigate, Link } from 'react-router-dom';
 import Layout from '../components/Layout';
+import logo from '../assets/choicedge-logo.png';
 
 function HomePage() {
   const [selectedType, setSelectedType] = useState<string | null>(null);
@@ -40,7 +41,7 @@ function HomePage() {
           <div className="mb-8">
             <div className="mb-8">
               <img
-                src="/choicedge-logo.png"
+                src={logo}
                 alt="Choicedge"
                 className="h-24 md:h-28 mx-auto"
               />

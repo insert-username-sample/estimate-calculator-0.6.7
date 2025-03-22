@@ -1,14 +1,18 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import path from 'path';
+import { fileURLToPath } from 'node:url';
+import path from 'node:path';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   define: {
-    'process.env': process.env
+    'process.env': {}
   },
   plugins: [react()],
-  base: '/',
-  assetsInclude: ['**/*.PNG'],
+  base: './',
+  assetsInclude: ['**/*.PNG', '**/*.png'],
+  publicDir: 'public',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
@@ -17,7 +21,7 @@ export default defineConfig({
   build: {
     emptyOutDir: true,
     reportCompressedSize: true,
-    brotliSize: true,
+    // Removed reportBrotliSize as it's not a valid BuildOptions property
     sourcemap: false,
     minify: 'terser',
     chunkSizeWarningLimit: 1000,
